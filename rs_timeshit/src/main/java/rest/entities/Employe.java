@@ -1,6 +1,6 @@
 package rest.entities;
 
-import java.io.Serializable;
+
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;

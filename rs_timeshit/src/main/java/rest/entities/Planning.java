@@ -1,6 +1,6 @@
 package rest.entities;
 
-import java.util.Date;
+
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
@@ -8,46 +8,121 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class Planning {
+	
+	
 	public Planning() {
 		super();
 	}
-
+	
+	
 	private String id;
 	private int heuredebut;
 	private int heurefin;
-	private Date jour ;
+	private String jour ;
 	
-	public String getid() {
+
+	public Planning(String id, int heuredebut, int heurefin, String jour) {
+		super();
+		this.id = id;
+		this.heuredebut = heuredebut;
+		this.heurefin = heurefin;
+		this.jour = jour;
+	}
+
+
+
+
+	
+	
+	
+
+	public String getId() {
 		return id;
 	}
-	
-	@XmlAttribute (name="id")
+
+
+
+
+
+
+
+	@XmlAttribute(name="id", required = true)
 	public void setId(String id) {
 		this.id = id;
 	}
-	public int getheuredebut() {
+
+
+
+
+
+
+
+
+	public int getHeuredebut() {
 		return heuredebut;
 	}
-	
-	@XmlElement (name="heuredebut")
-	public void setNom(int heuredebut) {
+
+
+
+
+
+
+
+	@XmlElement(name="heuredebut")
+	public void setHeuredebut(int heuredebut) {
 		this.heuredebut = heuredebut;
 	}
-	public int getheurefin() {
+
+
+
+
+
+
+
+
+	public int getHeurefin() {
 		return heurefin;
 	}
-	
-	@XmlElement (name="heurefin")
-	public void setPrenom(int heurefin) {
+
+
+
+
+
+
+
+	@XmlElement(name="heurfin")
+	public void setHeurefin(int heurefin) {
 		this.heurefin = heurefin;
 	}
-	@XmlElement (name="jour")
-	public void setJour(Date jour) {
-		this.jour = jour;
-	}
-	public Date getjour() {
+
+
+
+
+
+
+
+
+	public String getJour() {
 		return jour;
 	}
+
+
+
+
+
+
+
+	@XmlElement(name="jour")
+	public void setJour(String jour) {
+		this.jour = jour;
+	}
+
+
+
+
+
+
+
 
 	@Override
 	public int hashCode() {

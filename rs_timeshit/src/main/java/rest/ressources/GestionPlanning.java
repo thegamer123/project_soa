@@ -49,13 +49,13 @@ public class GestionPlanning {
 		}
 		
 		@DELETE
-		@Path("id")
+		@Path("delete/{id}")
 		public String deletePlanning(@PathParam("id") String id){
 			
 			Iterator<Planning> it = plannings.iterator();
 			while(it.hasNext())
 			{
-				it.next().getid().equals(id);
+				it.next().getId().equals(id);
 				it.remove();
 				return "planning supprimé";
 			}

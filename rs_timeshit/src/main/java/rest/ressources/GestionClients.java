@@ -51,7 +51,7 @@ public class GestionClients {
 	}
 
 	@DELETE
-	@Path("id")
+	@Path("delete/{id}")
 	public String deleteClient(@PathParam("id") String id) {
 
 		Iterator<Client> it = clients.iterator();

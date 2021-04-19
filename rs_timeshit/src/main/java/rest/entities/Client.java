@@ -1,15 +1,16 @@
 package rest.entities;
 
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class Client {
-	
-	
+
 	public Client() {
 		super();
 	}
-	
+
 	private String cin;
 	private String nom;
 	private String prenom;
@@ -17,12 +18,12 @@ public class Client {
 	private String dob;
 	private String addresse;
 	private String genre;
-	private String age;
+	private int age;
 	private String bankAccount;
 	private String phone;
-	
+
 	public Client(String cin, String nom, String prenom, String codePostal, String dob, String addresse, String genre,
-			String age, String bankAccount, String phone) {
+			int age, String bankAccount, String phone) {
 		super();
 		this.cin = cin;
 		this.nom = nom;
@@ -36,10 +37,12 @@ public class Client {
 		this.phone = phone;
 	}
 
+	
 	public String getCin() {
 		return cin;
 	}
 
+	@XmlAttribute(name="cin", required = true)
 	public void setCin(String cin) {
 		this.cin = cin;
 	}
@@ -48,6 +51,7 @@ public class Client {
 		return nom;
 	}
 
+	@XmlElement(name="nom")
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
@@ -56,6 +60,7 @@ public class Client {
 		return prenom;
 	}
 
+	@XmlElement(name="prenom")
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
@@ -64,6 +69,7 @@ public class Client {
 		return codePostal;
 	}
 
+	@XmlElement(name="codePostal")
 	public void setCodePostal(String codePostal) {
 		this.codePostal = codePostal;
 	}
@@ -72,6 +78,7 @@ public class Client {
 		return dob;
 	}
 
+	@XmlElement(name="dob")
 	public void setDob(String dob) {
 		this.dob = dob;
 	}
@@ -80,6 +87,7 @@ public class Client {
 		return addresse;
 	}
 
+	@XmlElement(name="addresse")
 	public void setAddresse(String addresse) {
 		this.addresse = addresse;
 	}
@@ -88,15 +96,17 @@ public class Client {
 		return genre;
 	}
 
+	@XmlElement(name="genre")
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
 
-	public String getAge() {
+	public int getAge() {
 		return age;
 	}
 
-	public void setAge(String age) {
+	@XmlElement(name="age")
+	public void setAge(int age) {
 		this.age = age;
 	}
 
@@ -104,6 +114,7 @@ public class Client {
 		return bankAccount;
 	}
 
+	@XmlElement(name="bankAccount")
 	public void setBankAccount(String bankAccount) {
 		this.bankAccount = bankAccount;
 	}
@@ -112,11 +123,11 @@ public class Client {
 		return phone;
 	}
 
+	@XmlElement(name="phone")
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -124,6 +135,7 @@ public class Client {
 		result = prime * result + ((cin == null) ? 0 : cin.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -140,13 +152,5 @@ public class Client {
 			return false;
 		return true;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 
 }
